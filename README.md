@@ -1,7 +1,6 @@
 ClassDebug
 ----------
 
-
 ## Install
 
 ```
@@ -34,8 +33,11 @@ let meee = new Meee()
 meee.debug('test instance')
 ```
 
+Then run the example
 ```
-DEBUG='app:*' node Meee.js
+→ DEBUG='one:*' node examples/Meee.js 
 debug goes below here
-
+  one:Meee testing +0ms
+  one:Meee debug is here +1ms
+  one:Meee debugr is here +0ms
 ```
