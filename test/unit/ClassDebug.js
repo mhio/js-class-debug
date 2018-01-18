@@ -30,6 +30,18 @@ describe('mh::test::Unit::ClassDebug', function(){
     ClassDebug.setup(TestSetup)
     expect(TestSetup.debug).to.be.a('function')
     expect(TestSetup.debugr).to.be.a('function')
+    TestSetup.debug('class test 1 debug')
+    TestSetup.debugr('class test 2 debugr')
+  })
+
+  it('should setup debug on a instance', function(){
+    class TestSetup {}
+    ClassDebug.setup(TestSetup)
+    expect(TestSetup.prototype.debug).to.be.a('function')
+    expect(TestSetup.prototype.debugr).to.be.a('function')
+    let ts = new TestSetup()
+    ts.debug('instance test 1 debug')
+    ts.debugr('instance test 2 debugr')
   })
 
 })
