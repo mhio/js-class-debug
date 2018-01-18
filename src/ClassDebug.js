@@ -24,13 +24,13 @@ export default class ClassDebug {
   }
 
   // Extend this class to include a custom prefix for a module
-  // static extend( prefix, name = 'Debug' ){
-  //   let classes = {}
-  //   classes[name] = class extends this {}
-  //   //_Debug.name = name
-  //   classes[name].default_prefix = prefix
-  //   return classes[name]
-  // }
+  static extend( prefix, name = 'Debug' ){
+    let classes = {}
+    classes[name] = class extends this {}
+    //_Debug.name = name
+    classes[name].default_prefix = prefix
+    return classes[name]
+  }
 
   // Attach debug to a class
   static attach( cls, prefix, suffix ){

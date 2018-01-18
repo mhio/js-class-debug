@@ -19,10 +19,9 @@ describe('mh::test::Unit::ClassDebug', function(){
     expect( ClassDebug.setup ).to.be.a('function')
   })
 
-  xit('should extend a class', function(){
-    class Whatever {}
-    const whatever = ClassDebug.extend( Whatever )
-    expect( whatever ).to.be.a('function')
+  it('should extend a class', function(){
+    const WeDebug = ClassDebug.extend( 'two', 'WeDebug' )
+    expect( WeDebug ).to.be.a('function')
   })
 
   it('should setup debug on a class', function(){
@@ -36,10 +35,20 @@ describe('mh::test::Unit::ClassDebug', function(){
 
   it('should setup debug on a instance', function(){
     class TestSetup {}
-    ClassDebug.setup(TestSetup)
-    expect(TestSetup.prototype.debug).to.be.a('function')
-    expect(TestSetup.prototype.debugr).to.be.a('function')
     let ts = new TestSetup()
+    ClassDebug.instance(ts)
+    expect(ts.debug).to.be.a('function')
+    expect(ts.debugr).to.be.a('function')
+    ts.debug('instance test 1 debug')
+    ts.debugr('instance test 2 debugr')
+  })
+
+  it('should setup debug on a instance with data', function(){
+    class TestSetup {}
+    let ts = new TestSetup()
+    ClassDebug.instance(ts, null, 'someid')
+    expect(ts.debug).to.be.a('function')
+    expect(ts.debugr).to.be.a('function')
     ts.debug('instance test 1 debug')
     ts.debugr('instance test 2 debugr')
   })
