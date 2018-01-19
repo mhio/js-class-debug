@@ -6,24 +6,23 @@ const noop = function(){}
 /** Class to manage debug on other classes */
 export class ClassDebug {
 
-  /** 
-   * Initialise the class
-   */
+  // Initialise the class
   static classInit(){
-    // Set a generic prefix var, so users can subclass in the their app (see `ClassDebug.extend()`)
+    /**
+     * @namespace ClassDebug
+     * @property {string} default_prefix - Set a generic prefix var, so users can subclass in the their app (see {@link ClassDebug.extend})
+     * @property {object} debugs - A store for the debugs, so it can be possible to retroactively enable/disable the noop after startup. This is to avoid the the `debug` function call overhead
+    */
+
     this.default_prefix = 'mh'
 
-    // Create a store for debugs, so it can be possible to retroactively 
-    // enable/disable the noop to avoid after startup. 
-    // This is to avoid the the `debug` function call overhead
     this.debugs = {}
 
     return this
   } 
 
   /**
-   * Complete setup for a module
-
+   * @description Complete setup for a module
    * @param {Class}  cls - Class to attach debug to
    * @param {string} prefix - debug namespace prefix
    */
@@ -34,9 +33,7 @@ export class ClassDebug {
   }
 
   /**
-   * Extend this class to include a custom prefix for an external
-   * module to use. 
-
+   * @description Extend this class to include a custom prefix for an external module to use. 
    * @param {string} prefix - debug namespace prefix
    * @param {string} name - Javascript name of the class
    * @return {Class} The extended ClassDebug class
@@ -50,7 +47,8 @@ export class ClassDebug {
   }
 
   /**
-   * @description Attach a debug namespace to a class
+   * @summary Attach a debug to a class
+   * @description Attaches a debug namespace with the format `prefix:suffix` to a class and it's prototype at `.debug` and `.debugr`.
    * @param {Class}  cls - Class to attach debug to
    * @param {string} prefix - debug namespace prefix
    * @param {string} suffix - debug namespace suffix, defaults to the class name
@@ -76,7 +74,8 @@ export class ClassDebug {
   }
 
   /**
-   * @description Attach a debug to a class instance, with optional `[data]` after the `prefix:suffix`
+   * @summary Attach a debug to a class instance
+   * @description Attach a debug namespace to a class instance, with optional `[data]` after the `prefix:suffix`
    * @param {object} instance - A class instance to attach debug to
    * @param {string} prefix - debug namespace prefix
    * @param {string} data - debug namespace data (after suffix)
@@ -98,8 +97,8 @@ export class ClassDebug {
 
   
   /**
-   * Create a debug instance with a set prefix
-
+   * @summary Create a debug instance with a set prefix
+   * @description The ClassDebug instance manages a fixed prefix for the debug namespaces you want to attach to other classes. 
    * @param {string} prefix - debug namespace prefix
    */
   constructor( prefix ){
@@ -107,8 +106,8 @@ export class ClassDebug {
   }
 
   /**
-   * Attach a debug namespace to a class: `prefix:suffix`
-   *
+   * @summary Attach a debug namespace to a class
+   * @description  Attaches a debug namespace of the format `prefix:suffix` to the specified class at `.debug` and `.debugr`.
    * @param {Class}  cls - Class to attach debug to
    * @param {string} suffix - debug namespace suffix, defaults to the class name
    * @return {object} The namespaced debug function
@@ -118,7 +117,7 @@ export class ClassDebug {
   }
 
   /**
-   * Attach a debug namespace to a class instance, with optional: `prefix:suffix[data]`
+   * Attach a debug namespace to a class instance, with optional `[data]` after the `prefix:suffix`
    *
    * @param {Class}  cls - Class to attach debug to
    * @param {string} data - debug namespace data, defaults to the class name

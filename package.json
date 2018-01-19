@@ -10,7 +10,7 @@
     "debug": "^3.1.0"
   },
   "scripts": {
-    "build": "set -uex; yarn run build:doc; yarn run build:code",
+    "build": "set -uex; yarn run build:code; yarn run build:doc",
     "build:doc": "jsdoc -c .jsdoc.json -d doc/ src/",
     "build:code": "babel -d lib/ src/",
     "test": "mocha test/unit test/int",
