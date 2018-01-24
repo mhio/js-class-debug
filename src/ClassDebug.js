@@ -33,7 +33,7 @@ export class ClassDebug {
   }
 
   /**
-   * @description Extend this class to include a custom prefix for an external module to use. 
+   * @description Extend this class to include a custom default prefix for an external module to use. 
    * @param {string} prefix - debug namespace prefix
    * @param {string} name - Javascript name of the class
    * @return {Class} The extended ClassDebug class
