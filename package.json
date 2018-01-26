@@ -1,6 +1,6 @@
 {
   "name": "@mhp/ClassDebug",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Class debug",
   "main": "lib/ClassDebug.js",
   "author": "Matt Hoyle",
