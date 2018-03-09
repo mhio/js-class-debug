@@ -3,11 +3,18 @@ import debugr from 'debug'
 const debug = debugr('mh:class-debug')
 const noop = function(){}
 
-/** Class to manage debug on other classes */
+/** 
+ A helper class to manage [debug](https://github.com/visionmedia/debug)
+ instances on other classes.
+
+ ```
+ ClassDebug.setup(MyClass, 'me:MyClass')
+ ``` 
+*/
 export class ClassDebug {
 
   // Initialise the class
-  static classInit(){
+  static _classInit(){
     /**
      * @namespace ClassDebug
      * @property {string} default_prefix - Set a generic prefix var, so users can subclass in the their app (see {@link ClassDebug.extend})
@@ -129,6 +136,5 @@ export class ClassDebug {
 
 }
 
-ClassDebug.classInit()
+ClassDebug._classInit()
 
-export default ClassDebug

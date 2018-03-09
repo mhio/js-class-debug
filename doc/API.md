@@ -2,7 +2,9 @@
 
 <dl>
 <dt><a href="#ClassDebug">ClassDebug</a></dt>
-<dd><p>Class to manage debug on other classes</p></dd>
+<dd><p><p>A helper class to manage <a href="https://github.com/visionmedia/debug">debug</a>
+ instances on other classes.</p></p>
+<pre class="prettyprint source"><code> ClassDebug.setup(MyClass, 'me:MyClass')</code></pre></dd>
 </dl>
 
 ## Objects
@@ -15,7 +17,9 @@
 <a name="ClassDebug"></a>
 
 ## ClassDebug
-<p>Class to manage debug on other classes</p>
+<p>A helper class to manage <a href="https://github.com/visionmedia/debug">debug</a>
+ instances on other classes.</p>
+<pre class="prettyprint source"><code> ClassDebug.setup(MyClass, 'me:MyClass')</code></pre>
 
 **Kind**: global class  
 

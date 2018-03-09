@@ -1,5 +1,5 @@
 /* global expect */
-import ClassDebug from '../../src/ClassDebug'
+import { ClassDebug } from '../../src/ClassDebug'
 
 describe('mh::test::Unit::ClassDebug', function(){
 
