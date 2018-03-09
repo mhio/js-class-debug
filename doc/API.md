@@ -30,7 +30,7 @@
         * [.instance(cls, data)](#ClassDebug+instance) ⇒ <code>object</code>
     * _static_
         * [.setup(cls, prefix)](#ClassDebug.setup)
-        * [.extend(prefix, name)](#ClassDebug.extend) ⇒ <code>Class</code>
+        * [.extend(debug_ns_prefix, [new_class_name])](#ClassDebug.extend) ⇒ <code>Class</code>
         * [.attach(cls, prefix, suffix)](#ClassDebug.attach) ⇒ <code>object</code>
         * [.instance(instance, prefix, data)](#ClassDebug.instance) ⇒ <code>object</code>
 
@@ -86,30 +86,30 @@
 <a name="ClassDebug.setup"></a>
 
 ### ClassDebug.setup(cls, prefix)
-<p>Complete setup for a module</p>
+<p>Complete <code>debug</code> setup for a Class/module as <code>prefix:ClassName</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cls | <code>Class</code> | <p>Class to attach debug to</p> |
-| prefix | <code>string</code> | <p>debug namespace prefix</p> |
+| cls | <code>Class</code> | <p>Class to attach <code>debug</code> to</p> |
+| prefix | <code>string</code> | <p>The <code>debug</code> namespace prefix to use</p> |
 
 
 * * *
 
 <a name="ClassDebug.extend"></a>
 
-### ClassDebug.extend(prefix, name) ⇒ <code>Class</code>
-<p>Extend this class to include a custom default prefix for an external module to use.</p>
+### ClassDebug.extend(debug_ns_prefix, [new_class_name]) ⇒ <code>Class</code>
+<p>Extend <code>ClassDebug</code> to include a custom default prefix for an external module to use.</p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Returns**: <code>Class</code> - <p>The extended ClassDebug class</p>  
+**Returns**: <code>Class</code> - <p>The extended <code>ClassDebug</code> class</p>  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| prefix | <code>string</code> |  | <p>debug namespace prefix</p> |
-| name | <code>string</code> | <code>&quot;Debug&quot;</code> | <p>Javascript name of the class</p> |
+| debug_ns_prefix | <code>string</code> |  | <p>The <code>debug</code> namespace prefix to use</p> |
+| [new_class_name] | <code>string</code> | <code>&quot;Debug&quot;</code> | <p>Optional name for the JavaScript class. Defaults to <code>Debug</code></p> |
 
 
 * * *
@@ -159,7 +159,7 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | default_prefix | <code>string</code> | <p>Set a generic prefix var, so users can subclass in the their app (see [extend](#ClassDebug.extend))</p> |
-| debugs | <code>object</code> | <p>A store for the debugs, so it can be possible to retroactively enable/disable the noop after startup. This is to avoid the the <code>debug</code> function call overhead</p> |
+| debugs | <code>object</code> | <p>A store for the debugs, so it can be possible to retroactively enable/disable the <code>noop</code> after startup. This is to avoid the the <code>debug</code> function call overhead.</p> |
 
 
 * [ClassDebug](#ClassDebug) : <code>object</code>
@@ -169,7 +169,7 @@
         * [.instance(cls, data)](#ClassDebug+instance) ⇒ <code>object</code>
     * _static_
         * [.setup(cls, prefix)](#ClassDebug.setup)
-        * [.extend(prefix, name)](#ClassDebug.extend) ⇒ <code>Class</code>
+        * [.extend(debug_ns_prefix, [new_class_name])](#ClassDebug.extend) ⇒ <code>Class</code>
         * [.attach(cls, prefix, suffix)](#ClassDebug.attach) ⇒ <code>object</code>
         * [.instance(instance, prefix, data)](#ClassDebug.instance) ⇒ <code>object</code>
 
@@ -225,30 +225,30 @@
 <a name="ClassDebug.setup"></a>
 
 ### ClassDebug.setup(cls, prefix)
-<p>Complete setup for a module</p>
+<p>Complete <code>debug</code> setup for a Class/module as <code>prefix:ClassName</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cls | <code>Class</code> | <p>Class to attach debug to</p> |
-| prefix | <code>string</code> | <p>debug namespace prefix</p> |
+| cls | <code>Class</code> | <p>Class to attach <code>debug</code> to</p> |
+| prefix | <code>string</code> | <p>The <code>debug</code> namespace prefix to use</p> |
 
 
 * * *
 
 <a name="ClassDebug.extend"></a>
 
-### ClassDebug.extend(prefix, name) ⇒ <code>Class</code>
-<p>Extend this class to include a custom default prefix for an external module to use.</p>
+### ClassDebug.extend(debug_ns_prefix, [new_class_name]) ⇒ <code>Class</code>
+<p>Extend <code>ClassDebug</code> to include a custom default prefix for an external module to use.</p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Returns**: <code>Class</code> - <p>The extended ClassDebug class</p>  
+**Returns**: <code>Class</code> - <p>The extended <code>ClassDebug</code> class</p>  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| prefix | <code>string</code> |  | <p>debug namespace prefix</p> |
-| name | <code>string</code> | <code>&quot;Debug&quot;</code> | <p>Javascript name of the class</p> |
+| debug_ns_prefix | <code>string</code> |  | <p>The <code>debug</code> namespace prefix to use</p> |
+| [new_class_name] | <code>string</code> | <code>&quot;Debug&quot;</code> | <p>Optional name for the JavaScript class. Defaults to <code>Debug</code></p> |
 
 
 * * *

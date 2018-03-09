@@ -18,7 +18,7 @@ export class ClassDebug {
     /**
      * @namespace ClassDebug
      * @property {string} default_prefix - Set a generic prefix var, so users can subclass in the their app (see {@link ClassDebug.extend})
-     * @property {object} debugs - A store for the debugs, so it can be possible to retroactively enable/disable the noop after startup. This is to avoid the the `debug` function call overhead
+     * @property {object} debugs - A store for the debugs, so it can be possible to retroactively enable/disable the `noop` after startup. This is to avoid the the `debug` function call overhead.
     */
 
     this.default_prefix = 'mh'
@@ -29,9 +29,9 @@ export class ClassDebug {
   } 
 
   /**
-   * @description Complete setup for a module
-   * @param {Class}  cls - Class to attach debug to
-   * @param {string} prefix - debug namespace prefix
+   * @description Complete `debug` setup for a Class/module as `prefix:ClassName`
+   * @param {Class}  cls - Class to attach `debug` to
+   * @param {string} prefix - The `debug` namespace prefix to use
    */
   static setup( cls, prefix ){
     const a_debug = new this( prefix )
@@ -40,17 +40,17 @@ export class ClassDebug {
   }
 
   /**
-   * @description Extend this class to include a custom default prefix for an external module to use. 
-   * @param {string} prefix - debug namespace prefix
-   * @param {string} name - Javascript name of the class
-   * @return {Class} The extended ClassDebug class
+   * @description Extend `ClassDebug` to include a custom default prefix for an external module to use. 
+   * @param {string} debug_ns_prefix - The `debug` namespace prefix to use
+   * @param {string} [new_class_name=Debug] - Optional name for the JavaScript class. Defaults to `Debug`
+   * @return {Class} The extended `ClassDebug` class
    */
-  static extend( prefix, name = 'Debug' ){
+  static extend( debug_ns_prefix, new_class_name = 'Debug' ){
     let classes = {}
-    classes[name] = class extends this {}
+    classes[new_class_name] = class extends this {}
     //_Debug.name = name
-    classes[name].default_prefix = prefix
-    return classes[name]
+    classes[new_class_name].default_prefix = debug_ns_prefix
+    return classes[new_class_name]
   }
 
   /**
