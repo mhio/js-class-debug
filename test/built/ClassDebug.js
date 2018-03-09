@@ -1,6 +1,7 @@
 /* global expect */
 
-const def, { ClassDebug } = require('../../')
+const def = require('../../')
+const { ClassDebug } = def
 
 describe('mh::test::Unit::ClassDebug', function(){
 

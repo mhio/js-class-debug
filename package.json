@@ -14,7 +14,7 @@
     "build": "set -uex; yarn run build:code; yarn run build:doc",
     "build:code": "babel -d lib/ src/",
     "build:doc": "set -uex; yarn run build:doc:html; yarn run build:doc:md",
-    "build:doc:html": "jsdoc -c .jsdoc.json -d doc/ src/",
+    "build:doc:html": "jsdoc -c .jsdoc.json -d doc/html src/",
     "build:doc:md": "jsdoc2md -c ./.jsdoc.json --separators -f src/* > doc/API.md",
     "test": "mocha test/unit test/int",
     "test:unit": "mocha test/int",
@@ -33,6 +33,7 @@
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
     "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^4.1.0",
     "nyc": "^11.4.1"
   }
