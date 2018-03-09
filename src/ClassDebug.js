@@ -64,7 +64,7 @@ export class ClassDebug {
   static attach( cls, ns_prefix, ns_suffix ){
 
     if ( ns_prefix === undefined || ns_prefix === null ) {
-      prefix = this.default_prefix
+      ns_prefix = this.default_prefix
     }
     if ( ns_suffix === undefined || ns_suffix === null ) {
       ns_suffix = cls.name
