@@ -31,7 +31,7 @@
     * _static_
         * [.setup(cls, prefix)](#ClassDebug.setup)
         * [.extend(debug_ns_prefix, [new_class_name])](#ClassDebug.extend) ⇒ <code>Class</code>
-        * [.attach(cls, prefix, suffix)](#ClassDebug.attach) ⇒ <code>object</code>
+        * [.attach(cls, ns_prefix, [ns_suffix])](#ClassDebug.attach) ⇒ <code>object</code>
         * [.instance(instance, prefix, data)](#ClassDebug.instance) ⇒ <code>object</code>
 
 
@@ -101,7 +101,7 @@
 <a name="ClassDebug.extend"></a>
 
 ### ClassDebug.extend(debug_ns_prefix, [new_class_name]) ⇒ <code>Class</code>
-<p>Extend <code>ClassDebug</code> to include a custom default prefix for an external module to use.</p>
+<p>Extend the <code>ClassDebug</code> class to include a custom default prefix. This give you a customised class for an external module to use instead of <code>ClassDebug</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
 **Returns**: <code>Class</code> - <p>The extended <code>ClassDebug</code> class</p>  
@@ -116,18 +116,18 @@
 
 <a name="ClassDebug.attach"></a>
 
-### ClassDebug.attach(cls, prefix, suffix) ⇒ <code>object</code>
-<p>Attaches a debug namespace with the format <code>prefix:suffix</code> to a class and it's prototype at <code>.debug</code> and <code>.debugr</code>.</p>
+### ClassDebug.attach(cls, ns_prefix, [ns_suffix]) ⇒ <code>object</code>
+<p>Attaches a <code>debug</code> namespace with the format <code>prefix:suffix</code> to a class and it's prototype at <code>.debug</code> and <code>.debugr</code>.</p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Summary**: <p>Attach a debug to a class</p>  
-**Returns**: <code>object</code> - <p>The namespaced debug function</p>  
+**Summary**: <p>Attach a <code>debug</code> to a class</p>  
+**Returns**: <code>object</code> - <p>The namespaced <code>debug</code> function</p>  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| cls | <code>Class</code> | <p>Class to attach debug to</p> |
-| prefix | <code>string</code> | <p>debug namespace prefix</p> |
-| suffix | <code>string</code> | <p>debug namespace suffix, defaults to the class name</p> |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| cls | <code>Class</code> |  | <p>The Class to attach <code>debug</code> to</p> |
+| ns_prefix | <code>string</code> |  | <p>The <code>debug</code> namespace prefix</p> |
+| [ns_suffix] | <code>string</code> | <code>&quot;Class&quot;</code> | <p>The <code>debug</code> namespace suffix, defaults to the class name</p> |
 
 
 * * *
@@ -135,10 +135,10 @@
 <a name="ClassDebug.instance"></a>
 
 ### ClassDebug.instance(instance, prefix, data) ⇒ <code>object</code>
-<p>Attach a debug namespace to a class instance, with optional <code>[data]</code> after the <code>prefix:suffix</code></p>
+<p>Attach a <code>debug</code> namespace to a class instance, with optional <code>[data]</code> after the <code>prefix:suffix</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Summary**: <p>Attach a debug to a class instance</p>  
+**Summary**: <p>Attach a <code>debug</code> to a class instance</p>  
 **Returns**: <code>object</code> - <p>The namespaced debug function</p>  
 
 | Param | Type | Description |
@@ -170,7 +170,7 @@
     * _static_
         * [.setup(cls, prefix)](#ClassDebug.setup)
         * [.extend(debug_ns_prefix, [new_class_name])](#ClassDebug.extend) ⇒ <code>Class</code>
-        * [.attach(cls, prefix, suffix)](#ClassDebug.attach) ⇒ <code>object</code>
+        * [.attach(cls, ns_prefix, [ns_suffix])](#ClassDebug.attach) ⇒ <code>object</code>
         * [.instance(instance, prefix, data)](#ClassDebug.instance) ⇒ <code>object</code>
 
 
@@ -240,7 +240,7 @@
 <a name="ClassDebug.extend"></a>
 
 ### ClassDebug.extend(debug_ns_prefix, [new_class_name]) ⇒ <code>Class</code>
-<p>Extend <code>ClassDebug</code> to include a custom default prefix for an external module to use.</p>
+<p>Extend the <code>ClassDebug</code> class to include a custom default prefix. This give you a customised class for an external module to use instead of <code>ClassDebug</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
 **Returns**: <code>Class</code> - <p>The extended <code>ClassDebug</code> class</p>  
@@ -255,18 +255,18 @@
 
 <a name="ClassDebug.attach"></a>
 
-### ClassDebug.attach(cls, prefix, suffix) ⇒ <code>object</code>
-<p>Attaches a debug namespace with the format <code>prefix:suffix</code> to a class and it's prototype at <code>.debug</code> and <code>.debugr</code>.</p>
+### ClassDebug.attach(cls, ns_prefix, [ns_suffix]) ⇒ <code>object</code>
+<p>Attaches a <code>debug</code> namespace with the format <code>prefix:suffix</code> to a class and it's prototype at <code>.debug</code> and <code>.debugr</code>.</p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Summary**: <p>Attach a debug to a class</p>  
-**Returns**: <code>object</code> - <p>The namespaced debug function</p>  
+**Summary**: <p>Attach a <code>debug</code> to a class</p>  
+**Returns**: <code>object</code> - <p>The namespaced <code>debug</code> function</p>  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| cls | <code>Class</code> | <p>Class to attach debug to</p> |
-| prefix | <code>string</code> | <p>debug namespace prefix</p> |
-| suffix | <code>string</code> | <p>debug namespace suffix, defaults to the class name</p> |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| cls | <code>Class</code> |  | <p>The Class to attach <code>debug</code> to</p> |
+| ns_prefix | <code>string</code> |  | <p>The <code>debug</code> namespace prefix</p> |
+| [ns_suffix] | <code>string</code> | <code>&quot;Class&quot;</code> | <p>The <code>debug</code> namespace suffix, defaults to the class name</p> |
 
 
 * * *
@@ -274,10 +274,10 @@
 <a name="ClassDebug.instance"></a>
 
 ### ClassDebug.instance(instance, prefix, data) ⇒ <code>object</code>
-<p>Attach a debug namespace to a class instance, with optional <code>[data]</code> after the <code>prefix:suffix</code></p>
+<p>Attach a <code>debug</code> namespace to a class instance, with optional <code>[data]</code> after the <code>prefix:suffix</code></p>
 
 **Kind**: static method of [<code>ClassDebug</code>](#ClassDebug)  
-**Summary**: <p>Attach a debug to a class instance</p>  
+**Summary**: <p>Attach a <code>debug</code> to a class instance</p>  
 **Returns**: <code>object</code> - <p>The namespaced debug function</p>  
 
 | Param | Type | Description |

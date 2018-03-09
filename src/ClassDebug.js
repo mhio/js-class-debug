@@ -40,7 +40,7 @@ export class ClassDebug {
   }
 
   /**
-   * @description Extend `ClassDebug` to include a custom default prefix for an external module to use. 
+   * @description Extend the `ClassDebug` class to include a custom default prefix. This give you a customised class for an external module to use instead of `ClassDebug` 
    * @param {string} debug_ns_prefix - The `debug` namespace prefix to use
    * @param {string} [new_class_name=Debug] - Optional name for the JavaScript class. Defaults to `Debug`
    * @return {Class} The extended `ClassDebug` class
@@ -54,22 +54,22 @@ export class ClassDebug {
   }
 
   /**
-   * @summary Attach a debug to a class
-   * @description Attaches a debug namespace with the format `prefix:suffix` to a class and it's prototype at `.debug` and `.debugr`.
-   * @param {Class}  cls - Class to attach debug to
-   * @param {string} prefix - debug namespace prefix
-   * @param {string} suffix - debug namespace suffix, defaults to the class name
-   * @return {object} The namespaced debug function
+   * @summary Attach a `debug` to a class
+   * @description Attaches a `debug` namespace with the format `prefix:suffix` to a class and it's prototype at `.debug` and `.debugr`.
+   * @param {Class}  cls - The Class to attach `debug` to
+   * @param {string} ns_prefix - The `debug` namespace prefix
+   * @param {string} [ns_suffix=Class] - The `debug` namespace suffix, defaults to the class name
+   * @return {object} The namespaced `debug` function
   */
-  static attach( cls, prefix, suffix ){
+  static attach( cls, ns_prefix, ns_suffix ){
 
-    if ( prefix === undefined || prefix === null ) {
+    if ( ns_prefix === undefined || ns_prefix === null ) {
       prefix = this.default_prefix
     }
-    if ( suffix === undefined || suffix === null ) {
-      suffix = cls.name
+    if ( ns_suffix === undefined || ns_suffix === null ) {
+      ns_suffix = cls.name
     }
-    let tag = `${prefix}:${suffix}`
+    let tag = `${ns_prefix}:${ns_suffix}`
     debug('Attaching debug "%s" to class %s', tag, cls.name)
     let cls_debug = debugr(tag)
 
@@ -81,8 +81,8 @@ export class ClassDebug {
   }
 
   /**
-   * @summary Attach a debug to a class instance
-   * @description Attach a debug namespace to a class instance, with optional `[data]` after the `prefix:suffix`
+   * @summary Attach a `debug` to a class instance
+   * @description Attach a `debug` namespace to a class instance, with optional `[data]` after the `prefix:suffix`
    * @param {object} instance - A class instance to attach debug to
    * @param {string} prefix - debug namespace prefix
    * @param {string} data - debug namespace data (after suffix)
