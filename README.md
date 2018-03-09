@@ -4,14 +4,16 @@ ClassDebug
 ## Install
 
 ```
-yarn add @mhp/ClassDebug
-npm install @mhp/ClassDebug
+yarn add @mhio/class-debug
+npm install @mhio/class-debug
 ```
 
 ## Usage
 
+[API Docs](doc/API.md)
+
 ```
-import ClassDebug from '@mhp/ClassDebug'
+import { ClassDebug } from '@mhio/class-debug'
 
 class Meee {
   static whatever(){

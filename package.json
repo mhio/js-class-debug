@@ -4,6 +4,7 @@
   "description": "Class debug helper",
   "main": "lib/ClassDebug.js",
   "author": "Matt Hoyle",
+  "repository": "https://github.com/mhio/js-class-debug",
   "license": "MIT",
   "private": false,
   "dependencies": {
@@ -11,8 +12,10 @@
   },
   "scripts": {
     "build": "set -uex; yarn run build:code; yarn run build:doc",
-    "build:doc": "jsdoc -c .jsdoc.json -d doc/ src/",
     "build:code": "babel -d lib/ src/",
+    "build:doc": "set -uex; yarn run build:doc:html; yarn run build:doc:md",
+    "build:doc:html": "jsdoc -c .jsdoc.json -d doc/ src/",
+    "build:doc:md": "jsdoc2md -c ./.jsdoc.json --separators -f src/* > doc/API.md",
     "test": "mocha test/unit test/int",
     "test:unit": "mocha test/int",
     "test:int": "mocha test/unit",
@@ -22,7 +25,7 @@
     "test:watch": "nodemon -x 'mocha test/unit test/int || exit 1'",
     "watch": "nodemon -x",
     "release:test": "set -uex; yarn test; npm version prerelease; npm publish --access public --tag testing",
-    "release:patch": "set -uex; git pull; rm -rf node_modules; yarn; yarn run test:coverage; yarn run test:lint; npm version patch; git push; npm publish --access restricted; git push --tags"
+    "release:patch": "set -uex; git pull; rm -rf node_modules; yarn; yarn run test:coverage; yarn run test:lint; yarn run buid:doc; npm version patch; git push; npm publish --access restricted; git push --tags"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
