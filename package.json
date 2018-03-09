@@ -1,6 +1,6 @@
 {
   "name": "@mhio/class-debug",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Class debug helper",
   "main": "lib/ClassDebug.js",
   "author": "Matt Hoyle",
